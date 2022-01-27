@@ -1,50 +1,73 @@
-import keyboard
 import pyautogui as pa
-import random
 import time
-import mouse
-#HeyArnoldo´s Size = Size(width=1366, height=768)
-xposCasco = 545
-yposCasco = 250
+import keyboard
+
+useFullHD = False
+timeSleep = 0.017
 
 cascoKey = "3"
 pecheraKey = "4"
 pantalonKey = "5"
 botasKey = "6"
 
-delay = "0.05"
+useKey = "x"
+exitKey = "z"
+
+
+
+FullHDConfig = (815,405)
+HDConfig = (545,250)
+if useFullHD :
+    xposCasco = FullHDConfig[0]
+    yposCasco = FullHDConfig[1]
+else :
+    xposCasco = HDConfig[0]
+    yposCasco = HDConfig[1]
 
 while True:
         x, y = pa.position()
-        if keyboard.is_pressed("x"):
-            pa.moveTo()
+        if keyboard.is_pressed(useKey):
+            pa.press("e")
 
-            pa.moveTo(x=xposCasco,y=yposCasco+145)
-            pa.press(cascoKey)
+            pa.moveTo(x=xposCasco,y=yposCasco+145,_pause=True)
+            pa.press(cascoKey,_pause=False)
+            time.sleep(timeSleep)
             pa.moveTo(x=xposCasco+35,y=yposCasco+145)
-            pa.press(pecheraKey)
+            pa.press(pecheraKey,_pause=False)
+            time.sleep(timeSleep)
             pa.moveTo(x=xposCasco,y=yposCasco+180)
-            pa.press(pantalonKey)
+            pa.press(pantalonKey,_pause=False)
+            time.sleep(timeSleep)
             pa.moveTo(x=xposCasco+35,y=yposCasco+180)
-            pa.press(botasKey)
+            pa.press(botasKey,_pause=False)
+            time.sleep(timeSleep)
 
             pa.moveTo(x=xposCasco,y=yposCasco)
-            pa.press(cascoKey)
+            pa.press(cascoKey,_pause=False)
+            time.sleep(timeSleep)
             pa.moveTo(x=xposCasco,y=yposCasco+35)
-            pa.press(pecheraKey)
+            pa.press(pecheraKey,_pause=False)
+            time.sleep(timeSleep)
             pa.moveTo(x=xposCasco,y=yposCasco+70)
-            pa.press(pantalonKey)
+            pa.press(pantalonKey,_pause=False)
+            time.sleep(timeSleep)
             pa.moveTo(x=xposCasco,y=yposCasco+105)
-            pa.press(botasKey)
+            pa.press(botasKey,_pause=False)
+            time.sleep(timeSleep)
 
-            pa.moveTo(x=xposCasco,y=yposCasco+145)
-            pa.press(cascoKey)
+            pa.moveTo(x=xposCasco,y=yposCasco+145,_pause=True)
+            pa.press(cascoKey,_pause=False)
+            time.sleep(timeSleep)
             pa.moveTo(x=xposCasco+35,y=yposCasco+145)
-            pa.press(pecheraKey)
+            pa.press(pecheraKey,_pause=False)
+            time.sleep(timeSleep)
             pa.moveTo(x=xposCasco,y=yposCasco+180)
-            pa.press(pantalonKey)
+            pa.press(pantalonKey,_pause=False)
+            time.sleep(timeSleep)
             pa.moveTo(x=xposCasco+35,y=yposCasco+180)
-            pa.press(botasKey)
+            pa.press(botasKey,_pause=False)
+            time.sleep(timeSleep)
 
-        if keyboard.is_pressed("z"):
+            pa.press("e")
+        if keyboard.is_pressed(exitKey):
             break
